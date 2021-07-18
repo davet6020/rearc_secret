@@ -1,0 +1,14 @@
+Steps to get this project running:
+
+Terraform the provided scripts, main.tf
+On each of the ec2 instances, Install Docker
+(yum -y install docker)
+The run the following commands
+
+mkdir -p /docker
+cd /docker
+git clone https://github.com/rearc/quest.git
+docker build -t node/rearc .
+docker run --name rearc -p 80:3000 -d node/rearc
+
+In AWS get the endpoint of the load balancer and to to that in your browser
